@@ -133,6 +133,8 @@ console.log(pacman.direction);
 
 if (world[pacman.y][pacman.x] == 1) {
   world[pacman.y][pacman.x] = 0;
+  pacman.score += 1;
+  document.getElementById('score').innerHTML = pacman.score;
   displayWorld();
 }
 if (world[pacman.y][pacman.x] == 3) {
@@ -142,6 +144,7 @@ if (world[pacman.y][pacman.x] == 3) {
   document.getElementById('score').innerHTML = pacman.score;
   displayWorld();
 }
+
 
 displayPacman();
 }

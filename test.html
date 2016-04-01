@@ -1,0 +1,33 @@
+<script>
+//given an array of strings, replace the strings with the length at the previous index
+  var arr = ["play","hi","hello","car"];
+
+  //arr = [0,4,2,5]
+
+  // function replace() {
+  //   var temp = arr[0].length;
+  //   var current;
+  //
+  //   for(var i = 1; i < arr.length; i++) {
+  //       current = arr[i].length;
+  //       console.log(current);
+  //       arr[i] = temp;
+  //       temp = current;
+  //   }
+  //   arr[0] = 0;
+  //   return arr;
+  // }
+
+
+function replace(arr) {
+  for(var i = arr.length-1; i > 0; i--) {
+    arr[i] = arr[i-1].length;
+    console.log(arr[i]);
+  }
+  arr[0] = 0;
+  return arr;
+
+}
+console.log(replace(arr));
+
+</script>
