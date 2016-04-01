@@ -14,9 +14,10 @@ $(document).ready(function() {
     [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
   ];
+  var score = 0;
   var pacman = {
-    x: 0,
-    y: 0
+    x: 1,
+    y: 1
   }
 
   function displayWorld() {
@@ -40,27 +41,34 @@ $(document).ready(function() {
   function displayPacman() {
     var pac = document.getElementById('pacman');
     pac.style.top = pacman.y*20 + "px";
-    pac.style.left = pacman.x*20 + "px"
+    pac.style.left = pacman.x*20 + "px";
   }
+  function displayScore() {
+    var pac = document.getElementById('score');
+    score.innerHTML = score;
 
+  }
   displayWorld();
   displayPacman();
 
   document.onkeydown = function(e) {
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 && world[pacman.y][pacman.x-1] != 2) {
       pacman.x--;
       console.log(pacman.x);
-    } else if (e.keyCode == 39) {
+    } else if (e.keyCode == 39 && world[pacman.y][pacman.x+1] !=2) {
       pacman.x++;
-    } else if (e.keyCode == 38) {
+    } else if (e.keyCode == 38 && world[pacman.y+1][pacman.x]) {
       pacman.y--;
-    } else if (e.keyCode == 40) {
+    } else if (e.keyCode == 40 && world[pacman.y-1][pacman.x]) {
       pacman.y++;
     }
 
     if(world[pacman.y][pacman.x] == 1) {
       world[pacman.y][pacman.x] = 0;
+      score +=10;
       displayWorld();
+      displayScore();
+      console.log(score);
     }
     displayPacman();
   }
