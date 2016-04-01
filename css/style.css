@@ -1,14 +1,17 @@
 body {
   background-color: #000;
   margin: 0px;
-  font-size: 0;
 }
 
 div.row div {
   width: 20px;
   height: 20px;
+  /*border: 1px solid black;*/
   display: inline-block;
+}
 
+div.row {
+  height: 20px;
 }
 
 div.brick {
@@ -27,14 +30,28 @@ div#pacman {
   position: absolute;
 }
 
+#world {
+  color: #fff;
+}
+
 #score {
-  border: 1px solid white;
-  width: 30px;
-  height: 20px;
   position: absolute;
-  padding: 7px;
-  top: 10px;
-  left: 250px;
+  top: 0px;
+  left: 600px;
+  border: 2px solid #fff;
+  width: 50px;
+  height: 50px;
   color: #fff;
   text-align: center;
+
+}
+
+.cherry {
+  background: url('../img/cherry-bonus.png') no-repeat center;
+  background-size: cover;
+}
+
+.blue_ghost {
+  background: url('../img/blue_ghost.png') no-repeat center;
+  background-size: cover;
 }
